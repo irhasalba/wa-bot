@@ -1,0 +1,22 @@
+{
+  "name": "whatsapp_bot",
+  "version": "1.0.0",
+  "description": "whatsapp_bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irhasalba/wa-bot.git"
+  },
+  "author": "irhasalba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irhasalba/wa-bot/issues"
+  },
+  "homepage": "https://github.com/irhasalba/wa-bot#readme",
+  "dependencies": {
+    "venom-bot": "^3.0.20"
+  }
+}
