@@ -4,7 +4,8 @@
   "description": "whatsapp_bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/irhasalba/wa-bot#readme",
   "dependencies": {
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.9",
     "venom-bot": "^3.0.20"
   }
 }

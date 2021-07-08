@@ -2,6 +2,10 @@
 // import { create, Whatsapp } from 'venom-bot';
 const venom = require("venom-bot");
 
+const fetch = require("node-fetch");
+
+const hadist = require("./features/hadist");
+
 venom
   .create()
   .then((client) => start(client))
@@ -13,7 +17,10 @@ function start(client) {
   client.onMessage((message) => {
     if (message.body === "/start" && message.isGroupMsg === false) {
       client
-        .sendText(message.from, "Silahkan Masukan Hadist yang ingin dicari")
+        .sendText(
+          message.from,
+          `Assalamualaikum Sahabat \n Selamat Datang Di Bot Hadist \n Created By : Muhammad Irhas Albais \n API By : Buka-Hadist \n Untuk memulai silahkan balas dengan diawali '/' dan diikuti kata kunci `
+        )
         .then((result) => {
           console.log("Result: ", result); //return object success
         })
@@ -21,14 +28,22 @@ function start(client) {
           console.error("Error when sending: ", erro); //return object error
         });
     }
-    if (message.body === "bukhari muslim" && message.isGroupMsg === false) {
-      client
-        .sendText(message.from, "Berikut Adalah Hadist yang anda cari")
-        .then((result) => {
-          console.log(result);
-        })
-        .catch((erro) => {
-          console.error(erro);
+
+    const body = message.body.charAt(0);
+    if (body == "c" && message.isGroupMsg === false) {
+      hadist
+        .getHadist()
+        .then((respoonse) => respoonse.json())
+        .then((data) => {
+          const randomly = Math.floor(Math.random() * data.results.length);
+          const arab = data.results[randomly].arab_text;
+          const translated = data.results[randomly].translated;
+          const title = data.results[randomly].title;
+
+          client.sendText(
+            message.from,
+            `Nomor Hadist : ${title} \n \n Hadist : ${arab} \n \n Terjemahan : ${translated}`
+          );
         });
     }
   });
