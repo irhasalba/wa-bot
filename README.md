@@ -10,9 +10,10 @@ npm install
 ```
 
 - untuk running program silahkan ketik
-  ...
-  node index
-  ...
+
+```
+npm start
+```
 
 ## API LIST
 
