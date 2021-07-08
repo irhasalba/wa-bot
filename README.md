@@ -5,17 +5,16 @@
 - clone repositori ini
 - jalankan
 
+```
 npm install
+```
 
 - untuk running program silahkan ketik
-
-node index
+  ...
+  node index
+  ...
 
 ## API LIST
 
 - Buka-Hadist : https://bukahadis-docs.vercel.app/docs/intro
 - Waktu Sholat : https://waktusholat.org/api/docs/
-
-```
-
-```
