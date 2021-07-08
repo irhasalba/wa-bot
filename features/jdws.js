@@ -1,20 +1,17 @@
 const fetch = require("node-fetch");
 
-exports.getHadist = (data) => {
+exports.getJadwalSholat = (data) => {
   return new Promise((resolve, reject) => {
     const url = fetch(
-      `https://api.devinesia.com/buka-hadis/?keyword=${data}&field=title,translated,arab_text`,
+      `https://api.pray.zone/v2/times/today.json?city=${data}`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Accept-Encoding": "gzip",
-          "Content-Encoding": "gzip",
         },
       }
     );
-
     resolve(url);
-    reject("Mohon Maaf Keyword Tidak Dikenali");
+    reject("Maaf keyword yang anda cari tidak ada");
   });
 };
