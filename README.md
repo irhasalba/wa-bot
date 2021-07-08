@@ -5,13 +5,13 @@
 - clone repositori ini
 - jalankan
 
-'''bash
+```console
 npm install
 ...
 
 - untuk running program silahkan ketik
 
-'''bash
+'''console
 node index
 ...
 
@@ -19,3 +19,4 @@ node index
 
 - Buka-Hadist : https://bukahadis-docs.vercel.app/docs/intro
 - Waktu Sholat : https://waktusholat.org/api/docs/
+```
